@@ -1,0 +1,9 @@
+# SDK Unifié Google (Remplace google-generativeai)
+google-genai==1.65.0 
+
+# SDK Anthropic (Optimisé Claude 4.6)
+anthropic==0.84.0 
+
+# Utilitaires Système (Support Python 3.14 & Sécurité ARM64)
+python-dotenv==1.2.2 
+Pillow==12.1.1

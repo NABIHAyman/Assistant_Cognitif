@@ -1,0 +1,25 @@
+version: "3.9"
+
+services:
+  assistant:
+    build: .
+    container_name: cognition_phase1
+
+    # On maintient le conteneur en vie (Idle). 
+    # Il ne fait rien tant que TU ne lances pas le script.
+    command: tail -f /dev/null
+
+    env_file:
+      - .env
+
+    # Les volumes sont en Read/Write (sauf le code qui pourrait être en RO, 
+    # mais on le laisse en RW pour flexibilité locale).
+    # L'accès écriture sur /images est OBLIGATOIRE pour pouvoir archiver.
+    volumes:
+      - ./src:/workspace/src
+      - ./images:/workspace/images
+      - ./assistant:/workspace/assistant
+
+    # Permet d'avoir un terminal interactif propre quand on lance le script
+    stdin_open: true
+    tty: true

@@ -1,0 +1,31 @@
+docker exec -it cognition_phase1 python src/orchestrator_gemini.py
+
+docker exec -it cognition_phase1 python src/executor.py
+
+docker exec -it cognition_phase1 printenv | grep DRY_RUN   # check if audit/production mode.
+
+## Search ##
+# Recherche texte libre
+docker exec -it cognition_phase1 python src/search.py "microservices"
+
+# Recherche par tag
+docker exec -it cognition_phase1 python src/search.py "python" --tags
+
+# Recherche dans un fichier spécifique
+docker exec -it cognition_phase1 python src/search.py "Program.cs" --file tech/aspnet_mvc_vs_webapi.md
+
+# Liste tous les fichiers avec stats (entrées + taille)
+docker exec -it cognition_phase1 python src/search.py --list
+
+
+
+## Consolidate ##
+# Lancement standard
+docker exec -it cognition_phase1 python src/consolidate.py
+
+# Voir les candidats sans toucher aux fichiers
+docker exec -it cognition_phase1 python src/consolidate.py --dry-run
+
+# Seuil plus strict (moins de candidats)
+docker exec -it cognition_phase1 python src/consolidate.py --threshold 0.5
+
