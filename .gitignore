@@ -1,0 +1,157 @@
+# ============================================================
+# SÉCURITÉ — Ne jamais commiter
+# ============================================================
+.env
+*.key
+*.pem
+*.secret
+
+# ============================================================
+# DONNÉES PERSONNELLES — Images et mémoire
+# ============================================================
+
+# Images (inbox, archive, trash) — données privées
+images/inbox/
+images/archive/
+images/trash/
+
+# Mémoire — notes personnelles
+assistant/memory/tech/
+assistant/memory/ai/
+assistant/memory/culture/
+assistant/memory/outils_ia/
+assistant/memory/inbox.md
+
+# Gouvernance — JSON de propositions (contiennent les analyses d'images)
+assistant/memory/proposals/
+assistant/memory/approved/
+assistant/memory/rejected/
+assistant/memory/skipped/
+
+# Prompts — contiennent le texte extrait des images
+assistant/prompts/
+
+# Logs de session — données d'usage personnelles
+assistant/logs/
+
+# ============================================================
+# CE QUI EST CONSERVÉ (structure vide pour le clone)
+# Les dossiers vides sont trackés via .gitkeep
+# ============================================================
+# assistant/core/instructions.md        ← COMMITÉ (config LLM)
+# src/                                  ← COMMITÉ (code)
+# docker-compose.yml                    ← COMMITÉ
+# Dockerfile                            ← COMMITÉ
+# requirements.txt                      ← COMMITÉ
+# README.md                             ← COMMITÉ
+# .env.example                          ← COMMITÉ
+
+# ============================================================
+# PYTHON
+# ============================================================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.whl
+.installed.cfg
+MANIFEST
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+*.cover
+.hypothesis/
+
+# ============================================================
+# ENVIRONNEMENTS VIRTUELS
+# ============================================================
+venv/
+env/
+ENV/
+.venv/
+.env/
+virtualenv/
+
+# ============================================================
+# DOCKER
+# ============================================================
+.docker/
+
+# ============================================================
+# ÉDITEURS ET IDEs
+# ============================================================
+
+# VSCode
+.vscode/
+*.code-workspace
+
+# JetBrains
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Vim / Emacs
+*.swp
+*.swo
+*~
+\#*\#
+.\#*
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# ============================================================
+# SYSTÈME D'EXPLOITATION
+# ============================================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+.fseventsd
+.TemporaryItems
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# Linux
+*~
+.nfs*
+
+# ============================================================
+# FICHIERS TEMPORAIRES
+# ============================================================
+*.tmp
+*.temp
+*.bak
+*.backup
+*.orig
+*.log
+*.out

@@ -1,0 +1,37 @@
+# ============================================================
+# NORMALISATION DES FINS DE LIGNE
+# Critique : le container Docker tourne sur Linux.
+# Si les scripts Python ont des CRLF, ils planteront.
+# ============================================================
+
+# Par défaut : LF pour tout
+* text=auto eol=lf
+
+# Scripts Python — LF obligatoire (exécutés dans Docker/Linux)
+*.py text eol=lf
+
+# Fichiers de config — LF obligatoire
+*.md text eol=lf
+*.txt text eol=lf
+*.env text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.json text eol=lf
+*.toml text eol=lf
+.gitignore text eol=lf
+.gitattributes text eol=lf
+Dockerfile text eol=lf
+
+# ============================================================
+# BINAIRES — pas de conversion de fins de ligne
+# ============================================================
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.gif binary
+*.ico binary
+*.pdf binary
+*.zip binary
+*.tar binary
+*.gz binary
